@@ -11,7 +11,15 @@ function getComputerChoice() {
 }
 
 function getHumanChoice() {
-  prompt("Play rock, paper, or scissors");
+  let choice = prompt("Play rock, paper, or scissors");
+  switch(choice) {
+    case "rock":
+      return "rock";
+    case "paper":
+      return "paper";
+    case "scissors":
+      return "scissors";
+  }
 }
 
 console.log(getHumanChoice());
