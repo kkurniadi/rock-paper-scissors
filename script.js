@@ -12,7 +12,7 @@ function getComputerChoice() {
 
 function getHumanChoice() {
   let choice = prompt("Play rock, paper, or scissors");
-  return choice;
+  return choice.toLowerCase();
 }
 
 
@@ -22,18 +22,18 @@ function playGame() {
   let computerScore = 0;
 
   function playRound(humanChoice, computerChoice) {
-  let outcome = `${humanChoice.toLowerCase()} ${computerChoice}`;
+  let outcome = `${humanChoice} ${computerChoice}`;
   switch(outcome) {
     case "rock scissors":
     case "scissors paper":
     case "paper rock":
-      console.log(`You win! ${humanChoice[0].toUpperCase() + humanChoice.slice(1).toLowerCase()} beats ${computerChoice}`);
+      console.log(`You win! ${humanChoice[0].toUpperCase() + humanChoice.slice(1)} beats ${computerChoice}`);
       humanScore++;
       break;
     case "rock paper":
     case "scissors rock":
     case "paper scissors":
-      console.log(`You lose! ${computerChoice[0].toUpperCase() + computerChoice.slice(1)} beats ${humanChoice.toLowerCase()}`);
+      console.log(`You lose! ${computerChoice[0].toUpperCase() + computerChoice.slice(1)} beats ${humanChoice}`);
       computerScore++;
       break;
     default:
