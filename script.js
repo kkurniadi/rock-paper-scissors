@@ -35,10 +35,7 @@ function playGame(rounds) {
   let humanScore = 0;
   let computerScore = 0;
 
-  function playRound() {
-    const humanChoice = getHumanChoice();
-    const computerChoice = getComputerChoice();
-
+  function playRound(humanChoice, computerChoice) {
     const result = determineWinner(humanChoice, computerChoice);
     if (result == "W") {
       console.log(`You win! ${humanChoice[0].toUpperCase() + humanChoice.slice(1)} beats ${computerChoice}`);
@@ -53,8 +50,11 @@ function playGame(rounds) {
     console.log(`Score is: ${humanScore} - ${computerScore}`);
   }
 
-  for (let n = 0; n < rounds; n++)
-    playRound();
+  for (let n = 0; n < rounds; n++) {
+    const humanSelection = getHumanChoice();
+    const computerSelection = getComputerChoice();
+    playRound(humanSelection, computerSelection);
+  }
 }
 
 playGame(5);
