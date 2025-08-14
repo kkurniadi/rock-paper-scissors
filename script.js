@@ -55,6 +55,13 @@ function playGame(rounds) {
     const computerSelection = getComputerChoice();
     playRound(humanSelection, computerSelection);
   }
+
+  if (humanScore > computerScore)
+    console.log("Congratulations, you won the game!");
+  else if (computerScore > humanScore)
+    console.log("The computer won. Better luck next time!");
+  else
+    console.log("You and the computer are perfectly tied")
 }
 
 playGame(5);
