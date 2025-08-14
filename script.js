@@ -47,7 +47,7 @@ function playGame(rounds) {
       console.log(`You lose! ${computerChoice[0].toUpperCase() + computerChoice.slice(1)} beats ${humanChoice}`);
       computerScore++;
     } else {
-      console.log("It's a tie!");
+      console.log(`It's a tie! You both played ${humanChoice}`);
     }
 
     console.log(`Score is: ${humanScore} - ${computerScore}`);
