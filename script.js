@@ -12,14 +12,7 @@ function getComputerChoice() {
 
 function getHumanChoice() {
   let choice = prompt("Play rock, paper, or scissors");
-  switch(choice) {
-    case "rock":
-      return "rock";
-    case "paper":
-      return "paper";
-    case "scissors":
-      return "scissors";
-  }
+  return choice;
 }
 
 let humanScore = 0;
