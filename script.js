@@ -15,35 +15,41 @@ function getHumanChoice() {
   return choice.toLowerCase();
 }
 
-
+function determineWinner(human, computer) {
+  const outcome = `${human} ${computer}`;
+  switch(outcome) {
+    case "rock scissors":
+    case "scissors paper":
+    case "paper rock":
+      return "W";
+    case "rock paper":
+    case "scissors rock":
+    case "paper scissors":
+      return "L";
+    default:
+      return "D";
+  }
+}
 
 function playGame() {
   let humanScore = 0;
   let computerScore = 0;
 
   function playRound(humanChoice, computerChoice) {
-  let outcome = `${humanChoice} ${computerChoice}`;
-  switch(outcome) {
-    case "rock scissors":
-    case "scissors paper":
-    case "paper rock":
-      console.log(`You win! ${humanChoice[0].toUpperCase() + humanChoice.slice(1)} beats ${computerChoice}`);
-      humanScore++;
-      break;
-    case "rock paper":
-    case "scissors rock":
-    case "paper scissors":
-      console.log(`You lose! ${computerChoice[0].toUpperCase() + computerChoice.slice(1)} beats ${humanChoice}`);
-      computerScore++;
-      break;
-    default:
-      console.log("It's a tie!");
-      break;
+  const result = determineWinner(humanChoice, computerChoice);
+  if (result == "W") {
+    console.log(`You win! ${humanChoice[0].toUpperCase() + humanChoice.slice(1)} beats ${computerChoice}`);
+    humanScore++;
+  } else if (result == "L") {
+    console.log(`You lose! ${computerChoice[0].toUpperCase() + computerChoice.slice(1)} beats ${humanChoice}`);
+    computerScore++;
+  } else {
+    console.log("It's a tie!");
   }
 }
 
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
+  const humanSelection = getHumanChoice();
+  const computerSelection = getComputerChoice();
 
-playRound(humanSelection, computerSelection);
+  playRound(humanSelection, computerSelection);
 }
