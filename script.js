@@ -15,10 +15,13 @@ function getHumanChoice() {
   return choice;
 }
 
-let humanScore = 0;
-let computerScore = 0;
 
-function playRound(humanChoice, computerChoice) {
+
+function playGame() {
+  let humanScore = 0;
+  let computerScore = 0;
+
+  function playRound(humanChoice, computerChoice) {
   let outcome = `${humanChoice.toLowerCase()} ${computerChoice}`;
   switch(outcome) {
     case "rock scissors":
@@ -43,3 +46,4 @@ const humanSelection = getHumanChoice();
 const computerSelection = getComputerChoice();
 
 playRound(humanSelection, computerSelection);
+}
