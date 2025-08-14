@@ -31,25 +31,30 @@ function determineWinner(human, computer) {
   }
 }
 
-function playGame() {
+function playGame(rounds) {
   let humanScore = 0;
   let computerScore = 0;
 
-  function playRound(humanChoice, computerChoice) {
-  const result = determineWinner(humanChoice, computerChoice);
-  if (result == "W") {
-    console.log(`You win! ${humanChoice[0].toUpperCase() + humanChoice.slice(1)} beats ${computerChoice}`);
-    humanScore++;
-  } else if (result == "L") {
-    console.log(`You lose! ${computerChoice[0].toUpperCase() + computerChoice.slice(1)} beats ${humanChoice}`);
-    computerScore++;
-  } else {
-    console.log("It's a tie!");
+  function playRound() {
+    const humanChoice = getHumanChoice();
+    const computerChoice = getComputerChoice();
+
+    const result = determineWinner(humanChoice, computerChoice);
+    if (result == "W") {
+      console.log(`You win! ${humanChoice[0].toUpperCase() + humanChoice.slice(1)} beats ${computerChoice}`);
+      humanScore++;
+    } else if (result == "L") {
+      console.log(`You lose! ${computerChoice[0].toUpperCase() + computerChoice.slice(1)} beats ${humanChoice}`);
+      computerScore++;
+    } else {
+      console.log("It's a tie!");
+    }
+
+    console.log(`Score is: ${humanScore} - ${computerScore}`);
   }
+
+  for (let n = 0; n < rounds; n++)
+    playRound();
 }
 
-  const humanSelection = getHumanChoice();
-  const computerSelection = getComputerChoice();
-
-  playRound(humanSelection, computerSelection);
-}
+playGame(5);
