@@ -66,6 +66,10 @@ function playGame(rounds) {
 
 // playGame(5);
 
-const rockButton = document.querySelector(".rock");
-const paperButton = document.querySelector(".paper");
-const scissorsButton = document.querySelector(".scissors");
+const rockBtn = document.querySelector(".rock");
+const paperBtn = document.querySelector(".paper");
+const scissorsBtn = document.querySelector(".scissors");
+
+rockBtn.addEventListener("click", () => playRound("rock"));
+paperBtn.addEventListener("click", () => playRound("paper"));
+scissorsBtn.addEventListener("click", () => playRound("scissors"));
