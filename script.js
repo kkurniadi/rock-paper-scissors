@@ -10,10 +10,10 @@ function getComputerChoice() {
   }
 }
 
-function getHumanChoice() {
+/* function getHumanChoice() {
   let choice = prompt("Play rock, paper, or scissors");
   return choice.toLowerCase();
-}
+} */
 
 function determineWinner(human, computer) {
   const outcome = `${human} ${computer}`;
@@ -69,6 +69,6 @@ const rockBtn = document.querySelector(".rock");
 const paperBtn = document.querySelector(".paper");
 const scissorsBtn = document.querySelector(".scissors");
 
-rockBtn.addEventListener("click", () => playRound("rock"));
-paperBtn.addEventListener("click", () => playRound("paper"));
-scissorsBtn.addEventListener("click", () => playRound("scissors"));
+rockBtn.addEventListener("click", playRound("rock"));
+paperBtn.addEventListener("click", playRound("paper"));
+scissorsBtn.addEventListener("click", playRound("scissors"));
