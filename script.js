@@ -31,7 +31,6 @@ function determineWinner(human, computer) {
   }
 }
 
-function playGame(rounds) {
   let humanScore = 0;
   let computerScore = 0;
 
@@ -50,11 +49,11 @@ function playGame(rounds) {
     console.log(`Score is: ${humanScore} - ${computerScore}`);
   }
 
-  for (let n = 0; n < rounds; n++) {
+  /* for (let n = 0; n < rounds; n++) {
     const humanSelection = getHumanChoice();
     const computerSelection = getComputerChoice();
     playRound(humanSelection, computerSelection);
-  }
+  } */
 
   if (humanScore > computerScore)
     console.log("Congratulations, you won the game!");
@@ -62,7 +61,6 @@ function playGame(rounds) {
     console.log("The computer won. Better luck next time!");
   else
     console.log("You and the computer are perfectly tied")
-}
 
 // playGame(5);
 
