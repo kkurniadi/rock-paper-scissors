@@ -64,4 +64,4 @@ function playGame(rounds) {
     console.log("You and the computer are perfectly tied")
 }
 
-playGame(5);
+// playGame(5);
