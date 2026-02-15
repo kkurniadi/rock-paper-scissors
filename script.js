@@ -34,7 +34,8 @@ function determineWinner(human, computer) {
   let humanScore = 0;
   let computerScore = 0;
 
-  function playRound(humanChoice, computerChoice) {
+  function playRound(humanChoice) {
+    const computerChoice = getComputerChoice();
     const result = determineWinner(humanChoice, computerChoice);
     if (result == "W") {
       console.log(`You win! ${humanChoice[0].toUpperCase() + humanChoice.slice(1)} beats ${computerChoice}`);
