@@ -49,7 +49,7 @@ function announceWinner() {
   else if (computerScore > humanScore)
     winnerDiv.textContent = "The computer won. Better luck next time!";
   else
-    winnerDiv.textContent = "You and the computer are perfectly tied";
+    winnerDiv.textContent = "You and the computer are perfectly tied… somehow…";
 }
 
 function playRound(humanChoice) {
