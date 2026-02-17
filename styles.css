@@ -7,3 +7,9 @@ button {
     width: 100px;
     font-size: medium;
 }
+
+div {
+    text-align: center;
+    padding: 10px;
+    margin: 0 auto;
+}
