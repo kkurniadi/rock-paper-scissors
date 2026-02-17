@@ -39,15 +39,19 @@ const resultDiv = document.querySelector(".results");
 const scoresDiv = document.querySelector(".scores");
 
 scoresDiv.textContent = "Score is: 0 - 0";
+scoresDiv.classList.add("announcement");
 
 function announceWinner() {
   const winnerDiv = document.createElement("div");
-  winnerDiv.classList.add("announcement");
   body.insertBefore(winnerDiv, scoresDiv);
-  if (humanScore > computerScore)
+  if (humanScore > computerScore) {
+    winnerDiv.style.backgroundColor = "lightgreen";
     winnerDiv.textContent = "Congratulations, you won the game!";
-  else if (computerScore > humanScore)
+  }
+  else if (computerScore > humanScore) {
+    winnerDiv.style.backgroundColor = "lightpink";
     winnerDiv.textContent = "The computer won. Better luck next time!";
+  }
   else
     winnerDiv.textContent = "You and the computer are perfectly tied… somehow…";
 }
