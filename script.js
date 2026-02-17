@@ -35,6 +35,9 @@ function determineWinner(human, computer) {
   let computerScore = 0;
 
   const resultDiv = document.querySelector(".results");
+  const scoresDiv = document.querySelector(".scores");
+
+  scoresDiv.textContent = "Score is: 0 - 0";
 
   function playRound(humanChoice) {
     const computerChoice = getComputerChoice();
@@ -49,7 +52,7 @@ function determineWinner(human, computer) {
       resultDiv.textContent = `It's a tie! You both played ${humanChoice}`;
     }
 
-    resultDiv.textContent += `Score is: ${humanScore} - ${computerScore}`;
+    scoresDiv.textContent = `Score is: ${humanScore} - ${computerScore}`;
   }
 
   /* for (let n = 0; n < rounds; n++) {
