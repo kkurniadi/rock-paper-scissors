@@ -42,6 +42,7 @@ scoresDiv.textContent = "Score is: 0 - 0";
 
 function announceWinner() {
   const winnerDiv = document.createElement("div");
+  winnerDiv.classList.add("announcement");
   body.insertBefore(winnerDiv, scoresDiv);
   if (humanScore > computerScore)
     winnerDiv.textContent = "Congratulations, you won the game!";
