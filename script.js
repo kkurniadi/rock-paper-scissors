@@ -34,18 +34,21 @@ function determineWinner(human, computer) {
 let humanScore = 0;
 let computerScore = 0;
 
+const body = document.querySelector("body");
 const resultDiv = document.querySelector(".results");
 const scoresDiv = document.querySelector(".scores");
 
 scoresDiv.textContent = "Score is: 0 - 0";
 
 function announceWinner() {
+  const winnerDiv = document.createElement("div");
+  body.insertBefore(winnerDiv, scoresDiv);
   if (humanScore > computerScore)
-    console.log("Congratulations, you won the game!");
+    winnerDiv.textContent = "Congratulations, you won the game!";
   else if (computerScore > humanScore)
-    console.log("The computer won. Better luck next time!");
+    winnerDiv.textContent = "The computer won. Better luck next time!";
   else
-    console.log("You and the computer are perfectly tied");
+    winnerDiv.textContent = "You and the computer are perfectly tied";
 }
 
 function playRound(humanChoice) {
