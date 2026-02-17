@@ -39,6 +39,15 @@ const scoresDiv = document.querySelector(".scores");
 
 scoresDiv.textContent = "Score is: 0 - 0";
 
+function announceWinner() {
+  if (humanScore > computerScore)
+    console.log("Congratulations, you won the game!");
+  else if (computerScore > humanScore)
+    console.log("The computer won. Better luck next time!");
+  else
+    console.log("You and the computer are perfectly tied");
+}
+
 function playRound(humanChoice) {
   const computerChoice = getComputerChoice();
   const result = determineWinner(humanChoice, computerChoice);
@@ -52,6 +61,8 @@ function playRound(humanChoice) {
     resultDiv.textContent = `It's a tie! You both played ${humanChoice}`;
   }
   scoresDiv.textContent = `Score is: ${humanScore} - ${computerScore}`;
+  if (humanScore == 5 || computerScore == 5)
+    announceWinner();
 }
 
 /* for (let n = 0; n < rounds; n++) {
@@ -59,15 +70,6 @@ function playRound(humanChoice) {
   const computerSelection = getComputerChoice();
   playRound(humanSelection, computerSelection);
 } */
-
-if (humanScore == 5 || computerScore == 5) {
-  if (humanScore > computerScore)
-    console.log("Congratulations, you won the game!");
-  else if (computerScore > humanScore)
-    console.log("The computer won. Better luck next time!");
-  else
-    console.log("You and the computer are perfectly tied");
-}
 
 // playGame(5);
 
