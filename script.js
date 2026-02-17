@@ -58,13 +58,13 @@ function determineWinner(human, computer) {
     playRound(humanSelection, computerSelection);
   } */
 
-  if (humanScore > computerScore)
+  /* if (humanScore > computerScore)
     console.log("Congratulations, you won the game!");
   else if (computerScore > humanScore)
     console.log("The computer won. Better luck next time!");
   else
-    console.log("You and the computer are perfectly tied")
-
+    console.log("You and the computer are perfectly tied");
+ */
 // playGame(5);
 
 const rockBtn = document.querySelector(".rock");
