@@ -34,20 +34,22 @@ function determineWinner(human, computer) {
   let humanScore = 0;
   let computerScore = 0;
 
+  const resultDiv = document.querySelector(".results");
+
   function playRound(humanChoice) {
     const computerChoice = getComputerChoice();
     const result = determineWinner(humanChoice, computerChoice);
     if (result == "W") {
-      console.log(`You win! ${humanChoice[0].toUpperCase() + humanChoice.slice(1)} beats ${computerChoice}`);
+      resultDiv.textContent = `You win! ${humanChoice[0].toUpperCase() + humanChoice.slice(1)} beats ${computerChoice}`;
       humanScore++;
     } else if (result == "L") {
-      console.log(`You lose! ${computerChoice[0].toUpperCase() + computerChoice.slice(1)} beats ${humanChoice}`);
+      resultDiv.textContent = `You lose! ${computerChoice[0].toUpperCase() + computerChoice.slice(1)} beats ${humanChoice}`;
       computerScore++;
     } else {
-      console.log(`It's a tie! You both played ${humanChoice}`);
+      resultDiv.textContent = `It's a tie! You both played ${humanChoice}`;
     }
 
-    console.log(`Score is: ${humanScore} - ${computerScore}`);
+    resultDiv.textContent += `Score is: ${humanScore} - ${computerScore}`;
   }
 
   /* for (let n = 0; n < rounds; n++) {
