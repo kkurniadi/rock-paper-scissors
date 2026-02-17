@@ -2,6 +2,16 @@
     font-family: "Roboto", sans-serif;
 }
 
+div {
+    text-align: center;
+    padding: 10px;
+    margin: 0 auto;
+}
+
+.options {
+    padding: 0px;
+}
+
 button {
     margin: 0 3px;
     height: 36px;
@@ -9,8 +19,3 @@ button {
     font-size: medium;
 }
 
-div {
-    text-align: center;
-    padding: 10px;
-    margin: 0 auto;
-}
